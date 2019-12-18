@@ -1,52 +1,96 @@
 'use strict';
 let express = require('express');
 let router = express.Router();
+let db = require('./db');
+let dateandtime = require('moment');
 
-
-// Create a new user
-router.post('/user',  function (request, response, next) {
-// Validation, was copied from the Countries database, otherwise it is straightforward JS codes
-  const formErrors = {};
-  if (!request.body.name) {
-    formErrors.name = 'Required';
-  }
-  if (!request.body.email) {
-    formErrors.email = 'Required';
-  }
-  if (!request.body.phone) {
-    formErrors.phone = 'Required';
-  }
-  if (formErrors !=={})
-  response.status(400);
-else
-{
-  console.log('Created a new user');
-  next();
-}
+//Home page
+router.get('/', (req, res) => {
+  res.render('contactform');
 });
 
 
-// Create a new session, from this point forward, output was sent to the console AND to the postman
-// also, started to use status code 200 for a succesful operation
-router.post('/session',  function (request, response, next) {
-response.send('A new session was created');
-console.log('A new user session created');
-response.status(200);
+//Create new user page
+router.get('/Createuser', function(req,res){
+  res.render('create-user-page',{
+    pageId: 'create-use',
+    title : 'Create a New User'
+  });
+});
+
+router.post('/create/user', function(req,res,next){
+  let newuser = {
+    type: 'USER',
+    name: req.body.name,
+    email: req.body.email,
+    phone: req.body.phone,
+  }
+  if (!newuser.name) {
+   return res.status(400).send('"name" is a required field');
+  } else if (!newuser.email) {
+    return res.status(400).send('"email" is a required field');
+  }
+    else if (!newuser.phone){
+    return  res.status(400).send(' "phone" is a required filed');
+    }
+    else
+    {
+    db.addentry(newuser);
+    res.status(201).send('success');
+    }
+});
+
+/***********************************************************
+****** New login session ***********************************
+***********************************************************/
+router.post('/login',  async function (request, response, next) {
+  let allentries = await db.read();
+  let found = allentries.some(entry => entry.name == (request.body.name));
+  if (!found){
+    return  response.status(400).send(` The username ${request.body.name} doesnt exist, please create a user first`);
+  }
+  else{
+    let newlogin = {
+      type: 'LOGIN',
+      name: request.body.name,
+      email: request.body.email,
+    }
+    db.addentry(newlogin);
+    response.status(201).send('success');
+
+next();
+  }
+});
+
+/*****************************************************
+ ************* Create an entry / submission **********
+ ******************************************************/
+router.post('/create/submission',  async function (request, response, next) {
+  let allentries = await db.read();
+  let found = allentries.some(entry => entry.name == (request.body.name) && entry.type === "LOGIN");
+  if (!found){
+    return  response.status(400).send(` The username ${request.body.name} doesnt exist, please login first`);
+  }
+  else{
+    let newsubmission = {
+      type: 'SUBMISSION',
+      name: request.body.name,
+      subdate: dateandtime().format(),
+      comment : request.body.comment,
+    }
+    db.addentry(newsubmission);
+    response.status(201).send('Comment Submitted Successfully');
+  }
 next();
 });
 
-// Create an entry / submission
-router.post('/entry',  function (request, response, next) {
-response.send('User comment was created');
-console.log('comment created');
-response.status(200);
-next();
-});
+/**************************************************
+**********  Read submissions **********************
+**************************************************/
 
-// Read submissions
-router.get('/',  function (request, response, next) {
-  response.send('reading all submissions, same comment passed to the console log');
-  console.log('reading all submissions');
+router.get('/readall',  async function (request, response, next) {
+  let allentries = await db.read();
+  response.json(allentries);
   response.status(200);
   next();
 });

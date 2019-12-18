@@ -1,0 +1,24 @@
+[
+  {
+    "type": "USER",
+    "name": "ali",
+    "email": "ali@asd.com",
+    "phone": "3435343435"
+  },
+  {
+    "type": "LOGIN",
+    "name": "ali",
+    "email": "test@123.com"
+  },
+  {
+    "type": "SUBMISSION",
+    "name": "ali",
+    "comment": "this is a first JS trial"
+  },
+  {
+    "type": "SUBMISSION",
+    "name": "ali",
+    "subdate": "2019-12-18T11:56:32-05:00",
+    "comment": "this is a first JS trial"
+  }
+]
