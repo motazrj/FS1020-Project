@@ -8,6 +8,7 @@
   },
   "author": "M Motaz Al Jamal <motazrj@gmail.com>",
   "dependencies": {
+    "argon2": "^0.25.1",
     "dotenv": "^8.2.0",
     "ejs": "^3.0.1",
     "express": "^4.17.1",
