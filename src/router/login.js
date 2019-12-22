@@ -1,31 +1,43 @@
 'use strict';
-
-let db = require ('../db');
+let argon = require('argon2');
+let db = require('../db');
 
 /***********************************************************
 ****** New login session ***********************************
 ***********************************************************/
 
- async function postLoginRoute(request, response, next) {
-
-  let allentries = await db.read();
-  let found = allentries.some(entry => (entry.name === (request.body.name) && entry.email === request.body.email));
-  if (!found) {
-    return response.status(400).send(` The username and email combination either do not match or do not exist, please create a user first`);
-  }
-  else {
-    request.session.username = request.body.username;
-
-    let newlogin = {
-      type: 'LOGIN',
-      name: request.body.name,
-      email: request.body.email,
+async function postLoginRoute(request, response, next) {
+  db.userExists(request.body.email).then((userExists) => {
+    if (!userExists)
+      return false;
+    // email exists, now verify the password
+    else {
+      return db.getUserPasswordHash(request.body.email)
+        .then((dbHash) => {
+          return argon.verify(dbHash, request.body.password);
+        });
     }
-    db.addentry(newlogin);
-    response.status(201).send(`success ${request.session.username}`);
+  })
+    .then((isValid) => {
+      // If invalid respond with authentication failure
+      if (!isValid) {
+        return response.status(400).send(` The email and password combination either do not
+     match or do not exist, please create a user first or enter a valid combination`);
+      }
+      else {
+        request.session.email = request.body.email;
+        let newlogin = {
+          type: 'LOGIN',
+          name: request.body.name,
+          email: request.body.email,
+          logindate: Date(),
+        }
+        db.addentry(newlogin);
+        response.status(201).send(`success ${request.session.email}`);
 
-    next();
-  }
+        next();
+      }
+    })
 };
 
-module.exports ={post: postLoginRoute};
+module.exports = { post: postLoginRoute };

@@ -1,151 +1,21 @@
 [
   {
     "type": "USER",
-    "name": "ali",
-    "email": "ali@asd.com",
-    "phone": "3435343435"
+    "name": "Motaz",
+    "email": "motazrj@gmail.com",
+    "phone": "343-534-3451",
+    "password": "$argon2i$v=19$m=4096,t=3,p=1$QXbF7YmVamTFxWg/pqFSCw$sG7ygx3o5rzuQj7a9Pw1iLCO4dzfBary8XbpYK5SIfA"
   },
   {
     "type": "LOGIN",
     "name": "ali",
-    "email": "test@123.com"
+    "email": "motazrj@gmail.com",
+    "logindate": "Sun Dec 22 2019 12:08:52 GMT-0500 (Eastern Standard Time)"
   },
   {
     "type": "SUBMISSION",
     "name": "ali",
-    "comment": "this is a first JS trial"
-  },
-  {
-    "type": "SUBMISSION",
-    "name": "ali",
-    "subdate": "2019-12-18T11:56:32-05:00",
-    "comment": "this is a first JS trial"
-  },
-  {
-    "type": "SUBMISSION",
-    "name": "ali",
-    "subdate": "Thu Dec 19 2019 11:32:14 GMT-0500 (Eastern Standard Time)",
-    "comment": "this is a first JS trial"
-  },
-  {
-    "type": "USER",
-    "name": "ali",
-    "email": "ali@asd.com",
-    "phone": "3435343435"
-  },
-  {
-    "type": "USER",
-    "name": "ali",
-    "email": "ali@asd.ca",
-    "phone": "3435343435"
-  },
-  {
-    "type": "USER",
-    "name": "ali",
-    "email": "a@asd.ca",
-    "phone": "343534345"
-  },
-  {
-    "type": "USER",
-    "name": "ali",
-    "email": "a@asd.ca",
-    "phone": "343534345"
-  },
-  {
-    "type": "USER",
-    "name": "ali",
-    "email": "a@asd.ca",
-    "phone": "3435343451"
-  },
-  {
-    "type": "USER",
-    "name": "ali",
-    "email": "a@asd.ca",
-    "phone": "3435343451"
-  },
-  {
-    "type": "USER",
-    "name": "ali",
-    "email": "a@asd.ca",
-    "phone": "343 534 3451"
-  },
-  {
-    "type": "USER",
-    "name": "ali",
-    "email": "a@asd.ca",
-    "phone": "343-534-3451"
-  },
-  {
-    "type": "LOGIN",
-    "name": "ali",
-    "email": "test@123.com"
-  },
-  {
-    "type": "LOGIN",
-    "name": "ali",
-    "email": "test@123.com"
-  },
-  {
-    "type": "USER",
-    "name": "ali",
-    "email": "a@asd.ca",
-    "phone": "343-534-3451",
-    "password": "pass1",
-    "cnfrmpsswrd": "pass1"
-  },
-  {
-    "type": "USER",
-    "name": "ali",
-    "email": "a@asd.ca",
-    "phone": "343-534-3451",
-    "password": "pass2",
-    "cnfrmpsswrd": "pass2"
-  },
-  {
-    "type": "USER",
-    "name": "ali",
-    "email": "a@asd.ca",
-    "phone": "343-534-3451",
-    "password": "pass3",
-    "cnfrmpsswrd": "pass3"
-  },
-  {
-    "type": "USER",
-    "name": "ali",
-    "email": "a@asd.ca",
-    "phone": "343-534-3451",
-    "password": "pass4",
-    "cnfrmpsswrd": "pass4"
-  },
-  {
-    "type": "LOGIN",
-    "name": "ali",
-    "email": "test@123.com"
-  },
-  {
-    "type": "LOGIN",
-    "name": "ali",
-    "email": "test@123.com"
-  },
-  {
-    "type": "SUBMISSION",
-    "name": "ali",
-    "subdate": "Sat Dec 21 2019 09:23:02 GMT-0500 (Eastern Standard Time)",
+    "subdate": "Sun Dec 22 2019 12:09:09 GMT-0500 (Eastern Standard Time)",
     "comment": "this is a first JS trial after separating the routes"
-  },
-  {
-    "type": "LOGIN",
-    "name": "ali",
-    "email": "test@123.com"
-  },
-  {
-    "type": "LOGIN",
-    "name": "ali",
-    "email": "test@123.com"
-  },
-  {
-    "type": "LOGIN",
-    "name": "ali",
-    "email": "test@123.com"
   }
 ]

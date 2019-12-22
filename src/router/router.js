@@ -4,8 +4,8 @@ let router = express.Router();
 
 let db = require('../db');
 let userRoutes = require('./newuser');
-let loginRoutes = require ('./login');
-let submissionRoutes = require ('./newsubmission');
+let loginRoutes = require('./login');
+let submissionRoutes = require('./newsubmission');
 
 
 //Home page
@@ -31,13 +31,13 @@ router.post('/newsubmission', submissionRoutes.post);
 /**************************************************
 **********  Read submissions **********************
 **************************************************/
-/*
+
 router.get('/readall', async function (request, response, next) {
   let allentries = await db.read();
-  response.json(allentries);
-  response.status(200);
+  return response.json(allentries);
+  return response.status(200);
   next();
 });
-*/
+
 
 module.exports = router;

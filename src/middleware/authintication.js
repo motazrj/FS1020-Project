@@ -1,11 +1,9 @@
 'use strict';
 
 module.exports = function authenticationMiddleware(req, res, next) {
-  if ((!req.session.username) ||(!req.session.email)) {
+  if (!req.session.email || !req.session.password) {
     res
-      .status(401)
-     // .render('status/forbidden');
-     .send(`User has to login first `);
+      .status(401).send(`User has to login first `);
   } else {
     next();
   }
