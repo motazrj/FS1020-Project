@@ -13,9 +13,10 @@ async function postnewsubmission(request, response, next) {
         return response.status(400).send(` The username ${request.body.name} doesnt exist, please login first`);
       }
       else {
+
         let newsubmission = {
           type: 'SUBMISSION',
-          name: request.body.name,
+          email: request.body.email,
           subdate: Date(), //dateandtime().format(),
           comment: request.body.comment,
         }

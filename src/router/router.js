@@ -34,9 +34,8 @@ router.post('/newsubmission', submissionRoutes.post);
 
 router.get('/readall', async function (request, response, next) {
   let allentries = await db.read();
-  return response.json(allentries);
-  return response.status(200);
-  next();
+  return response.status(200).json(allentries);
+ // next();
 });
 
 

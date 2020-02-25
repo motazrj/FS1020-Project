@@ -1,21 +1,50 @@
 [
   {
     "type": "USER",
-    "name": "Motaz",
-    "email": "motazrj@gmail.com",
+    "name": "Ali",
+    "email": "abc@b.com",
     "phone": "343-534-3451",
-    "password": "$argon2i$v=19$m=4096,t=3,p=1$QXbF7YmVamTFxWg/pqFSCw$sG7ygx3o5rzuQj7a9Pw1iLCO4dzfBary8XbpYK5SIfA"
+    "password": "$argon2i$v=19$m=4096,t=3,p=1$cZ53sidiT8/BaO8R/SK8cA$AEznGt2UEKusGRg5bK9zSL1SRV33yGBtcvE8hDIY3tg"
+  },
+  {
+    "type": "USER",
+    "name": "Bari",
+    "email": "bc@b.com",
+    "phone": "343-534-3451",
+    "password": "$argon2i$v=19$m=4096,t=3,p=1$C94ETmOCfIMUGDpX2TOT+A$kMcBs1x+LcxScLYrS5lIOkaXT1M7k6q1U6ClNCqiu/Y"
+  },
+  {
+    "type": "USER",
+    "name": "Lri",
+    "email": "lbc@b.com",
+    "phone": "343-534-3451",
+    "password": "$argon2i$v=19$m=4096,t=3,p=1$PFi48IHdnGJUdn/APzH3aQ$MWtUD/h+icX/8tcb3kXmSXTO95m87jVXanzLOSs4UkE"
   },
   {
     "type": "LOGIN",
-    "name": "ali",
-    "email": "motazrj@gmail.com",
-    "logindate": "Sun Dec 22 2019 12:08:52 GMT-0500 (Eastern Standard Time)"
+    "email": "abc@b.com",
+    "logindate": "Tue Feb 25 2020 15:26:06 GMT-0500 (Eastern Standard Time)"
+  },
+  {
+    "type": "LOGIN",
+    "email": "bc@b.com",
+    "logindate": "Tue Feb 25 2020 15:26:33 GMT-0500 (Eastern Standard Time)"
+  },
+  {
+    "type": "LOGIN",
+    "email": "lbc@b.com",
+    "logindate": "Tue Feb 25 2020 15:26:39 GMT-0500 (Eastern Standard Time)"
   },
   {
     "type": "SUBMISSION",
-    "name": "ali",
-    "subdate": "Sun Dec 22 2019 12:09:09 GMT-0500 (Eastern Standard Time)",
-    "comment": "this is a first JS trial after separating the routes"
+    "email": "abc@b.com",
+    "subdate": "Tue Feb 25 2020 15:26:51 GMT-0500 (Eastern Standard Time)",
+    "comment": "this is a here JS trial after separating the routes"
+  },
+  {
+    "type": "SUBMISSION",
+    "email": "bc@b.com",
+    "subdate": "Tue Feb 25 2020 15:26:59 GMT-0500 (Eastern Standard Time)",
+    "comment": "this is a here JS trial after separating the routes"
   }
 ]

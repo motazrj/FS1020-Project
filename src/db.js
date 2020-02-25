@@ -47,7 +47,7 @@ function userExists(email) {
     let exists = false;
     users.forEach((user) => {
       if (user.email === email) {
-        exists = true;
+        return exists = true;
       }
     });
     return exists;
@@ -60,6 +60,7 @@ function getUserPasswordHash(email) {
     users.forEach((user) => {
       if (user.email === email) {
         match = user;
+        return match.password;
       }
     });
 
@@ -88,7 +89,7 @@ function loginExists(email) {
     users.forEach((user) => {
 
       if ((user.email === email)) { // && ((Date() - user.logindate) <=process.env.MAXAGE)){
-        logged = true;
+        return logged = true;
       }
     });
     return logged;

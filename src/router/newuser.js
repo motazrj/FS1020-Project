@@ -25,7 +25,8 @@ function postnewuserRoute(req, res, next) {
     };
     // If there are any errors do not register the user
     if (formErrors.email || formErrors.password) {
-      res.status(400).render('new-user-page', {
+      res.status(400).send('Either an email or the passwords is missing / invalid.....correct them and try again please');
+      /*.render('new-user-page', {
         pageId: 'new-use',
         title: 'Create a New User',
         email: req.session.email,
@@ -35,7 +36,7 @@ function postnewuserRoute(req, res, next) {
           email: req.body.email,
           password: req.body.password,
         },
-      });
+      }); */
       // Else if the form values are valid
     } else {
       return argon.hash(req.body.password).then((dbHash) => {
@@ -63,7 +64,7 @@ function postnewuserRoute(req, res, next) {
         }
       })
         .then(() => {
-          res.redirect('/login');
+      //    res.redirect('/login');
         });
     }
   })

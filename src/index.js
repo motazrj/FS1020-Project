@@ -10,6 +10,7 @@ let express = require('express');
 let path = require('path');
 let router = require('./router/router');
 let session = require('express-session');
+let cors = require('cors')
 let defaultErrorHandler = require('./middleware/default-error-handler');
 let deafaultsessionvalues = require('./middleware/default-session-values');
 let authintication = require('./middleware/authintication');
@@ -26,6 +27,10 @@ app.set('view engine', 'ejs');
 app.use(express.static(path.join(__dirname, 'static')));
 //Body parser
 app.use(express.json());
+app.use(cors());
+//app.get('/products/:id', function (req, res, next) {
+//  res.json({msg: 'This is CORS-enabled for all origins!'})
+//});
 app.use(express.urlencoded({ extended: false }));
 
 /************************************************************
@@ -46,12 +51,12 @@ app.use(session({
 app.use(deafaultsessionvalues);
 app.use(router);
 app.use(authintication);
+
 // path `/static/protected` from the folder `static/protected`
 app.use('/static/protected', express.static(path.resolve('static/protected')));
 
 
 app.use(defaultErrorHandler);
-
 
 
 function handleServerListen() {
