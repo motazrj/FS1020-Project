@@ -33,7 +33,7 @@ async function postLoginRoute(request, response, next) {
           logindate: Date(),
         }
         db.addentry(newlogin);
-        response.status(201).send(`success ${request.session.email}`);
+        response.status(201).send({message: `success, user ${request.session.email} logged in`});
 
         next();
       }

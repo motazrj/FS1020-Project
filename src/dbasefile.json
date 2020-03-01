@@ -36,15 +36,41 @@
     "logindate": "Tue Feb 25 2020 15:26:39 GMT-0500 (Eastern Standard Time)"
   },
   {
-    "type": "SUBMISSION",
-    "email": "abc@b.com",
-    "subdate": "Tue Feb 25 2020 15:26:51 GMT-0500 (Eastern Standard Time)",
-    "comment": "this is a here JS trial after separating the routes"
+    "type": "USER",
+    "name": "xri",
+    "email": "xbc@b.com",
+    "phone": "343-534-3451",
+    "password": "$argon2i$v=19$m=4096,t=3,p=1$TyXvat+Bv1GW1wZoQ1AROg$gdQxh08fgsuhjbN83DufzhIDW/TjY9flOoRp///jQRI"
+  },
+  {
+    "type": "LOGIN",
+    "email": "xbc@b.com",
+    "logindate": "Sun Mar 01 2020 09:01:58 GMT-0500 (Eastern Standard Time)"
+  },
+  {
+    "type": "USER",
+    "name": "yri",
+    "email": "ybc@b.com",
+    "phone": "343-534-3451",
+    "password": "$argon2i$v=19$m=4096,t=3,p=1$KMKouhk5sSEMhVeW+2Xr8g$/JyatHIlGDiZ3jnPwQUIUbTUHubToCie1yTY6ytM8t4"
+  },
+  {
+    "type": "LOGIN",
+    "email": "ybc@b.com",
+    "logindate": "Sun Mar 01 2020 09:03:20 GMT-0500 (Eastern Standard Time)"
   },
   {
     "type": "SUBMISSION",
-    "email": "bc@b.com",
-    "subdate": "Tue Feb 25 2020 15:26:59 GMT-0500 (Eastern Standard Time)",
-    "comment": "this is a here JS trial after separating the routes"
+    "email": "abc@b.com",
+    "phone": "1234567890",
+    "subdate": "Sun Mar 01 2020 09:09:41 GMT-0500 (Eastern Standard Time)",
+    "comment": "dsdds"
+  },
+  {
+    "type": "SUBMISSION",
+    "email": "abc@b.com",
+    "phone": "1234567890",
+    "subdate": "Sun Mar 01 2020 09:09:43 GMT-0500 (Eastern Standard Time)",
+    "comment": "dsdds"
   }
 ]

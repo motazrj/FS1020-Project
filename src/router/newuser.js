@@ -25,7 +25,7 @@ function postnewuserRoute(req, res, next) {
     };
     // If there are any errors do not register the user
     if (formErrors.email || formErrors.password) {
-      res.status(400).send('Either an email or the passwords is missing / invalid.....correct them and try again please');
+      res.status(400).json('Either an email or the passwords is missing / invalid.....correct them and try again please');
       /*.render('new-user-page', {
         pageId: 'new-use',
         title: 'Create a New User',
@@ -48,19 +48,19 @@ function postnewuserRoute(req, res, next) {
           password: dbHash,
         };
         if (!newuser.name) {
-          return res.status(400).send('"name" is a required field');
+          return res.status(400).json('"name" is a required field');
         } else if ((!newuser.email) || (!db.validateEmail(req.body.email))) {
-          return res.status(400).send('"email" is a required field, it is either missing or not in the proper format');
+          return res.status(400).json('"email" is a required field, it is either missing or not in the proper format');
         }
         else if ((!newuser.phone) || (!db.phonenumber(req.body.phone))) {
-          return res.status(400).send(' "phone" is a required filed, either missing or not in proper format');
+          return res.status(400).json(' "phone" is a required filed, either missing or not in proper format');
         }
         else if ((!req.body.password) || (!req.body.cnfrmpsswrd) || (req.body.password !== req.body.cnfrmpsswrd)) {
-          return res.status(400).send('password and confirm password shouldnt be empty and should match');
+          return res.status(400).json('password and confirm password shouldnt be empty and should match');
         }
         else {
           db.addentry(newuser);
-          res.status(201).send('success');
+          res.status(201).json('success, new user added ');
         }
       })
         .then(() => {
